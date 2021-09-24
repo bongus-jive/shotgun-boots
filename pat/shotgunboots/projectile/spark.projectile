@@ -1,0 +1,14 @@
+{
+  "projectileName" : "pat_shotgunboots_spark",
+  "image" : "spark.png",
+  "physics" : "grenade",
+  "bounces" : 1,
+  "frameNumber" : 1,
+  "damageKind" : "default",
+  "flippable" : true,
+  "fullbright" : true,
+  "hydrophobic" : true,
+  "onlyHitTerrain" : true,
+  "damageType" : "NoDamage",
+  "speed" : 10
+}
