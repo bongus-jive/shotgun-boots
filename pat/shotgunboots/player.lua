@@ -19,9 +19,13 @@ function update(dt, ...)
 	and self.fallDistance > minimumFallDistance
 	and -self.lastYVelocity > minimumFallVel then
 		local r = rect.translate(mcontroller.boundBox(), mcontroller.position())
-		r[2] = r[2] - 5
+		local r2 = r[2]
+		r[2] = r[4]
+		r[4] = r2
+		local i = r[2] > r[4] and 4 or 2
+		r[i] = r[i] - 6
 		
-		if world.rectTileCollision(r) then
+		if world.rectCollision(r, {"Block", "Platform", "Dynamic"}) then
 			status.removeEphemeralEffect("pat_shotgunboots")
 			status.addEphemeralEffect("pat_shotgunboots")
 			
