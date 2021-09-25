@@ -24,7 +24,7 @@ function update(dt, ...)
 			local r2 = r[2]
 			r[2], r[4] = r[4], r2
 		end
-		r[4] = r[4] - 6
+		r[4] = r[4] - 4
 		
 		if world.rectCollision(r, {"Block", "Platform", "Dynamic"}) then
 			status.removeEphemeralEffect("pat_shotgunboots")
