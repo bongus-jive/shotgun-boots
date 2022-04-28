@@ -5,5 +5,5 @@
     { "item" : "volatilepowder", "count" : 1 }
   ],
   "output" : { "item" : "pat_shotgunboots", "count" : 1 },
-  "groups" : [ "plain", "all" ]
+  "groups" : [ "craftinganvil2", "armours", "all" ]
 }

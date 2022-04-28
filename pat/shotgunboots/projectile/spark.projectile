@@ -10,5 +10,9 @@
   "hydrophobic" : true,
   "onlyHitTerrain" : true,
   "damageType" : "NoDamage",
-  "speed" : 10
+  "speed" : 10,
+	
+	"movementSettings": {
+    "ignorePlatformCollision" : false
+	}
 }
