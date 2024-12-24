@@ -1,6 +1,6 @@
 {
   "projectileName": "pat_shotgunboots_bullet",
-  "image": "shotgun.png",
+  "image": "bullet.png",
   "physics": "laser",
   "power": 7.5,
   "speed": 150,
