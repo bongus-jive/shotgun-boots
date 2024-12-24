@@ -3,7 +3,7 @@
   "price": 1280,
   "inventoryIcon": "icon.png",
   "maxStack": 1,
-  "rarity": "Essential",
+  "rarity": "Legendary",
   "category": "legarmour",
   "description": "what",
   "shortdescription": "Shotgun Boots",
@@ -12,7 +12,7 @@
   "maleFrames": "pants.png",
   "femaleFrames": "pants.png",
 
-  "level": 6,
+  "level": 4,
   "leveledStatusEffects": [
     {
       "levelFunction": "standardArmorLevelPowerMultiplierMultiplier",
