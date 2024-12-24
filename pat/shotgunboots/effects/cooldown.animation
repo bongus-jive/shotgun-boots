@@ -45,25 +45,23 @@
     "smoke": {
       "active": false,
       "emissionRate": 0,
-      "offsetRegion": [ -0.125, -1.5, 0.125, -1.5 ],
+      "offsetRegion": [ -0.25, -1.5, 0.25, -1.5 ],
       "particles": [
-        { "particle": "rocketbarrelpuff" },
-        { "particle": "rocketbarrelpuff" },
-        { "particle": "rocketbarrelpuff" },
-        { "particle": "rocketbarrelpuff" },
-        { "particle": "rocketbarrelpuff" },
-        { "particle": "rocketbarrelpuff" },
-        { "particle": "firestormflame" },
-        { "particle": "firestormflame2" },
-        { "particle": "firestormflame3" }
+        { "particle": "rocketbarrelpuff", "count": 6 },
+        { "particle": "firestormflame", "count": 4 },
+        { "particle": "firestormflame2", "count": 4 },
+        { "particle": "firestormflame3", "count": 4 }
       ]
     },
     "smokeloop": {
       "active": false,
       "emissionRate": 8,
-      "offsetRegion": [ -0.125, -1.5, 0.125, -1.5 ],
+      "offsetRegion": [ -0.25, -1.5, 0.25, -1.5 ],
+      "randomSelectCount": 1,
       "particles": [
-        { "particle": "rocketbarrelpuff" }
+        { "particle": "rocketbarrelpuff", "count": 2 },
+        { "particle": "rocketbarrelpuff", "count": 1 },
+        { "particle": "rocketbarrelpuff", "count": 0 }
       ]
     },
     "shells": {
@@ -71,8 +69,7 @@
       "emissionRate": 0,
       "offsetRegion": [ -0.25, -1.5, 0.25, -1.5 ],
       "particles": [
-        { "particle": "pat_shotgunboots_shell" },
-        { "particle": "pat_shotgunboots_shell" }
+        { "particle": "pat_shotgunboots_shell", "count": 2 }
       ]
     }
   },
