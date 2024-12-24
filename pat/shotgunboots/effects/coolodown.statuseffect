@@ -1,0 +1,10 @@
+{
+  "name": "pat_shotgunboots",
+  "defaultDuration": 0.25,
+  "effectConfig": { },
+  "scripts": [ "cooldown.lua" ],
+  "animationConfig": "cooldown.animation",
+
+  "label": "Shotgun Boots Cooldown",
+  "icon": "/pat/shotgunboots/effects/cooldown.png"
+}

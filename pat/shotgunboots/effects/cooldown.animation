@@ -11,7 +11,7 @@
             "properties": {
               "lightsOn": [ "flash" ],
               "particleEmittersOn": [ "smoke" ],
-              "immediateSound": "/pat/shotgunboots/effect/fire.ogg"
+              "immediateSound": "/pat/shotgunboots/effects/fire.ogg"
             }
           },
           "wait": {
