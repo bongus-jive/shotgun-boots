@@ -60,7 +60,7 @@
     },
     "smokeloop": {
       "active": false,
-      "emissionRate": 5,
+      "emissionRate": 8,
       "offsetRegion": [ -0.125, -1.5, 0.125, -1.5 ],
       "particles": [
         { "particle": "rocketbarrelpuff" }
