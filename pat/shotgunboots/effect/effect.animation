@@ -44,7 +44,7 @@
   "particleEmitters": {
     "smoke": {
       "active": false,
-      "emissionRate": 1,
+      "emissionRate": 0,
       "offsetRegion": [ -0.125, -1.5, 0.125, -1.5 ],
       "particles": [
         { "particle": "rocketbarrelpuff" },
@@ -68,7 +68,7 @@
     },
     "shells": {
       "active": false,
-      "emissionRate": 1,
+      "emissionRate": 0,
       "offsetRegion": [ -0.25, -1.5, 0.25, -1.5 ],
       "particles": [
         { "particle": "pat_shotgunboots_shell" },
