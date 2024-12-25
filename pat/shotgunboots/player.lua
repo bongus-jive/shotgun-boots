@@ -45,7 +45,7 @@ function update(dt)
 
 	local entityId = entity.id()
 	local params = {}
-	params.power = 5 * status.stat("powerMultiplier")
+	params.powerMultiplier = status.stat("powerMultiplier")
 
 	for _ = 1, projectileCount do
 		params.speed = sb.nrand(25, 150)

@@ -2,7 +2,7 @@
   "projectileName": "pat_shotgunboots_bullet",
   "image": "bullet.png",
   "physics": "laser",
-  "power": 7.5,
+  "power": 5,
   "speed": 150,
   "damageKind": "shotgunbullet",
   "flippable": true,
