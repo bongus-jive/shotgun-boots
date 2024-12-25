@@ -3,22 +3,20 @@
 	"definition": {
 		"type": "textured",
 		"image": "/pat/shotgunboots/particles/shell.png",
-		"size": 1,
 		"angularVelocity": 360,
-		"fade": 0.9,
-		"initialVelocity": [ -6, 6.0 ],
-		"finalVelocity": [ 0, -100.0 ],
+		"initialVelocity": [ -6, 6 ],
+		"finalVelocity": [ 0, -100 ],
 		"approach": [ 0, 20 ],
-		"position": [ 0, 0 ],
 		"timeToLive": 1.5,
-		"layer": "front",
+		"layer": "middle",
 		"rotate": true,
 		"collidesForeground": true,
-		"destructionAction": "shrink",
-		"destructionTime": 0.25,
+		"destructionAction": "fade",
+		"destructionTime": 0.15,
 		"variance": {
-			"initialVelocity": [ 1, 2.0 ],
-			"angularVelocity": 90
+			"position": [ 0.25, 0.25 ],
+			"initialVelocity": [ 2, 3 ],
+			"angularVelocity": 120
 		}
 	}
 }
