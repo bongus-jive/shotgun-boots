@@ -1,48 +1,55 @@
-require "/scripts/rect.lua"
-
-local oldInit = init or function() end
-local oldUpdate = update or function() end
+require "/scripts/vec2.lua"
 
 local minimumFallDistance = 14
 local minimumFallVel = 40
 
-function init(...)
-	oldInit(...)
+local collisionKinds = {"Block", "Platform", "Dynamic", "Slippery"}
+
+local _init = init
+function init()
+	_init()
 	status.removeEphemeralEffect("pat_shotgunboots")
 end
 
-function update(dt, ...)
-	oldUpdate(dt, ...)
-	
-	if status.statPositive("pat_shotgunboots")
-	and not mcontroller.zeroG()
-	and self.fallDistance > minimumFallDistance
-	and -self.lastYVelocity > minimumFallVel then
-		local r = rect.translate(mcontroller.boundBox(), mcontroller.position())
-		
-		if r[4] > r[2] then
-			local r2 = r[2]
-			r[2], r[4] = r[4], r2
-		end
-		r[4] = r[4] - 4
-		
-		if world.rectCollision(r, {"Block", "Platform", "Dynamic"}) then
-			status.removeEphemeralEffect("pat_shotgunboots")
-			status.addEphemeralEffect("pat_shotgunboots")
-			
-			local yVel = mcontroller.yVelocity()
-			local projectileCount = math.ceil(math.abs(yVel) / 7.5)
-			mcontroller.setYVelocity(math.max(0, yVel + (projectileCount * 10)))
-			self.fallDistance = 0
-			
-			for _ = 1, projectileCount do
-				local angle = vec2.rotate({0, -1}, sb.nrand(0.15, 0))
-				local params = {
-					speed = sb.nrand(15, 200),
-					power = 5 * status.stat("powerMultiplier")
-				}
-				world.spawnProjectile("pat_shotgunboots_bullet", mcontroller.position(), entity.id(), angle, false, params)
-			end
-		end
+local _update = update
+function update(dt)
+	_update(dt)
+
+	if not status.statPositive("pat_shotgunboots") or mcontroller.zeroG() or self.fallDistance <= minimumFallDistance or -self.lastYVelocity <= minimumFallVel then
+		return
+	end
+
+	local mPos = mcontroller.position()
+	local mBoundBox = mcontroller.boundBox()
+	local box = {
+		mBoundBox[1] + mPos[1], mBoundBox[2] + mPos[2],
+		mBoundBox[3] + mPos[1], mBoundBox[4] + mPos[2]
+	}
+
+	if box[4] > box[2] then
+		box[2], box[4] = box[4], box[2]
+	end
+	box[4] = box[4] + (self.lastYVelocity * dt) - 2
+
+	if not world.rectCollision(box, collisionKinds) then
+		return
+	end
+
+	status.addEphemeralEffect("pat_shotgunboots")
+
+	local yVelocity = mcontroller.yVelocity()
+	local projectileCount = math.ceil(math.abs(yVelocity) / 7.5)
+	self.fallDistance = 0
+
+	mcontroller.setYVelocity(math.max(0, yVelocity + (projectileCount * 10)))
+
+	local entityId = entity.id()
+	local params = {}
+	params.power = 5 * status.stat("powerMultiplier")
+
+	for _ = 1, projectileCount do
+		params.speed = sb.nrand(25, 150)
+		local angle = vec2.rotate({0, -1}, sb.nrand(0.15, 0))
+		world.spawnProjectile("pat_shotgunboots_bullet", mPos, entityId, angle, false, params)
 	end
 end
