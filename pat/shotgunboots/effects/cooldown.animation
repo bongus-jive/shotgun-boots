@@ -5,20 +5,19 @@
         "default": "fire",
         "states": {
           "fire": {
-            "cycle": 0.07,
+            "cycle": 0.12,
             "mode": "transition",
             "transition": "wait",
             "properties": {
               "lightsOn": [ "flash" ],
-              "particleEmittersOn": [ "smoke" ],
-              "immediateSound": "/pat/shotgunboots/effects/fire.ogg"
+              "particleEmittersOn": [ "smoke" ]
             }
           },
           "wait": {
             "properties": {
+              "lightsOff": [ "flash" ],
               "particleEmittersOn": [ "smokeloop" ],
-              "particleEmittersOff": [ "smoke" ],
-              "lightsOff": [ "flash" ]
+              "particleEmittersOff": [ "smoke" ]
             }
           },
           "reload": {
@@ -27,8 +26,7 @@
             "transition": "off",
             "properties": {
               "particleEmittersOn": [ "shells" ],
-              "particleEmittersOff": [ "smokeloop" ],
-              "immediateSound": "/sfx/gun/reload/shotgun_reload_clip3.ogg"
+              "particleEmittersOff": [ "smokeloop" ]
             }
           },
           "off": {
@@ -76,8 +74,27 @@
 
   "lights": {
     "flash": {
-      "position": [ 0, -0.25 ],
-      "color": [ 90, 90, 0 ]
+      "active": true,
+      "position": [ 0, -1.5 ],
+      "color": [ 220, 200, 130 ],
+
+      "pointLight": true,
+      "pointAngle": -90,
+      "pointBeam": 0.3,
+      "beamAmbience": 0.55,
+
+      "flickerPeriod": 12,
+      "flickerMinIntensity": 1.1,
+      "flickerMaxIntensity": -1000
+    }
+  },
+
+  "sounds": {
+    "fire": {
+      "pool": [ "/pat/shotgunboots/effects/fire.ogg" ]
+    },
+    "reload": {
+      "pool": [ "/sfx/gun/reload/shotgun_reload_clip3.ogg" ]
     }
   }
 }
