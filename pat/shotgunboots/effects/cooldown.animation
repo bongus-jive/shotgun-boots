@@ -43,12 +43,12 @@
     "smoke": {
       "active": false,
       "emissionRate": 0,
-      "offsetRegion": [ -0.25, -1.5, 0.25, -1.5 ],
+      "offsetRegion": [ -0.375, -1.375, 0.375, -1.625 ],
       "particles": [
         { "particle": "rocketbarrelpuff", "count": 6 },
-        { "particle": "firestormflame", "count": 4 },
-        { "particle": "firestormflame2", "count": 4 },
-        { "particle": "firestormflame3", "count": 4 }
+        { "particle": "firestormflame", "count": 2 },
+        { "particle": "firestormflame2", "count": 2 },
+        { "particle": "firestormflame3", "count": 2 }
       ]
     },
     "smokeloop": {
