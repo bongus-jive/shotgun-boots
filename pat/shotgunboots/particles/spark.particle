@@ -1,0 +1,25 @@
+{
+	"kind": "pat_shotgunboots_spark",
+	"definition": {
+		"type": "ember",
+		"size": 0.6,
+		"color": [ 255, 225, 85, 200 ],
+		"light": [ 70, 60, 20 ],
+		"fullbright": true,
+		"fade": 1,
+		"initialVelocity": [ 0, 5 ],
+		"finalVelocity": [ 0, -50.0 ],
+		"approach": [ 0, 30 ],
+		"timeToLive": 0.1,
+		"destructionTime": 0.2,
+		"destructionAction": "shrink",
+		"layer": "middle",
+		"trail": true,
+		"variance": {
+			"size": 0.3,
+			"position": [ 0.5, 0.5 ],
+			"initialVelocity": [ 10, 10 ],
+			"timeToLive": 0.2
+		}
+	}
+}
