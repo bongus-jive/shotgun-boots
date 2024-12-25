@@ -5,9 +5,7 @@
   "power": 7.5,
   "speed": 150,
   "damageKind": "shotgunbullet",
-  "pierces": false,
   "flippable": true,
-  "fullbright": true,
   "actionOnReap": [
     {
       "action": "config",
