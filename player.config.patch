@@ -2,7 +2,7 @@
 	{
 		"op": "add",
 		"path": "/statusControllerSettings/primaryScriptSources/-",
-		"value": "/pat/shotgunboots/player.lua"
+		"value": "/pat/shotgunboots/shotgunboots.lua"
 	},
 	{
 		"op": "add",

@@ -1,22 +1,25 @@
 require "/scripts/vec2.lua"
 
-local minimumFallDistance = 14
-local minimumFallVel = 40
+local ShotgunBoots = {}
+pat_ShotgunBoots = ShotgunBoots
 
-local collisionKinds = {"Block", "Platform", "Dynamic", "Slippery"}
-
-local _init = init
-function init()
-	_init()
+function ShotgunBoots:init()
+	self.minimumFallDistance = 14
+	self.minimumFallVel = 40
+	self.collisionKinds = {"Block", "Platform", "Dynamic", "Slippery"}
 	status.removeEphemeralEffect("pat_shotgunboots")
 end
 
-local _update = update
-function update(dt)
-	_update(dt)
+function ShotgunBoots:update(dt)
+	self.dt = dt
+	if status.statPositive("pat_shotgunboots") and self:detectFall() then
+		self:fire()
+	end
+end
 
-	if not status.statPositive("pat_shotgunboots") or mcontroller.zeroG() or self.fallDistance <= minimumFallDistance or -self.lastYVelocity <= minimumFallVel then
-		return
+function ShotgunBoots:detectFall()
+	if mcontroller.zeroG() or _ENV.self.fallDistance <= self.minimumFallDistance or -_ENV.self.lastYVelocity <= self.minimumFallVel then
+		return false
 	end
 
 	local mPos = mcontroller.position()
@@ -29,20 +32,21 @@ function update(dt)
 	if box[4] > box[2] then
 		box[2], box[4] = box[4], box[2]
 	end
-	box[4] = box[4] + (self.lastYVelocity * dt) - 2
+	box[4] = box[4] + (_ENV.self.lastYVelocity * self.dt) - 2
 
-	if not world.rectCollision(box, collisionKinds) then
-		return
-	end
+	return world.rectCollision(box, self.collisionKinds)
+end
 
+function ShotgunBoots:fire()
 	status.addEphemeralEffect("pat_shotgunboots")
 
 	local yVelocity = mcontroller.yVelocity()
 	local projectileCount = math.ceil(math.abs(yVelocity) / 7.5)
-	self.fallDistance = 0
-
+	
 	mcontroller.setYVelocity(math.max(0, yVelocity + (projectileCount * 10)))
+	_ENV.self.fallDistance = 0
 
+	local mPos = mcontroller.position()
 	local entityId = entity.id()
 	local params = {}
 	params.powerMultiplier = status.stat("powerMultiplier")
@@ -52,4 +56,16 @@ function update(dt)
 		local angle = vec2.rotate({0, -1}, sb.nrand(0.15, 0))
 		world.spawnProjectile("pat_shotgunboots_bullet", mPos, entityId, angle, false, params)
 	end
+end
+
+local _init = init
+function init()
+	_init()
+	ShotgunBoots:init()
+end
+
+local _update = update
+function update(dt)
+	ShotgunBoots:update(dt)
+	_update(dt)
 end
