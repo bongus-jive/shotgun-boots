@@ -10,7 +10,7 @@
 		"initialVelocity": [ 0, 5 ],
 		"finalVelocity": [ 0, -50.0 ],
 		"approach": [ 0, 30 ],
-		"timeToLive": 0.1,
+		"timeToLive": 0.2,
 		"destructionTime": 0.2,
 		"destructionAction": "shrink",
 		"layer": "middle",
@@ -18,7 +18,7 @@
 		"variance": {
 			"size": 0.25,
 			"position": [ 0.5, 0.5 ],
-			"initialVelocity": [ 10, 10 ],
+			"initialVelocity": [ 18, 18 ],
 			"timeToLive": 0.2
 		}
 	}
