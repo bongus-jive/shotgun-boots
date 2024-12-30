@@ -1,10 +1,11 @@
 {
-  "version" : "1.2",
   "author" : "pat",
-  "tags" : "Miscellaneous|Weapons|Armor and Clothes",
-  "description" : "adds shotgun boots\nthey fire when you are about to take fall damage and they will make you not do that\nthey need to be reloaded by standing on the ground\n\nmake at tier 2 anvil\n\n\n[img]https://i.imgur.com/wXjYMqP.gif[/img]https://discord.gg/GdsQSgV\n[img]https://i.imgur.com/uyG8oTa.gif[/img]https://www.patreon.com/pathiccstar",
-  "name" : "pat_shotgunboots",
+  "description" : "adds shotgun boots\nthey fire when you are about to take fall damage and they will make you not do that\nthey need to be reloaded by standing on the ground\n\nmake at tier 2 anvil",
   "friendlyName" : "shotgun boots",
+  "link" : "steam://url/CommunityFilePage/2609827892",
+  "name" : "pat_shotgunboots",
   "steamContentId" : "2609827892",
-  "link" : "steam://url/CommunityFilePage/2609827892"
+  "steamDescription" : "adds shotgun boots\nthey fire when you are about to take fall damage and they will make you not do that\nthey need to be reloaded by standing on the ground\n\nmake at tier 2 anvil\n\n\n[img]https://i.imgur.com/wXjYMqP.gif[/img]https://discord.gg/GdsQSgV\n[img]https://i.imgur.com/uyG8oTa.gif[/img]https://www.patreon.com/pathiccstar\n[img]https://i.imgur.com/xVfcRRH.gif[/img]https://ko-fi.com/patmanf\n[img]https://i.imgur.com/jJAj6jF.gif[/img]https://github.com/bongus-jive/shotgun-boots",
+  "tags" : "Miscellaneous|Weapons|Armor and Clothes",
+  "version" : "1.3"
 }
